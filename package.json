@@ -2,22 +2,32 @@
   "name": "dockerapp",
   "version": "1.0.0",
   "description": "A simple CAP project.",
-  "repository": {
-    "type": "git",
-    "url": "<Add your repository here>"
-  },
+  "repository": "<Add your repository here>",
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
-    "@sap/cds": "^7",
+    "@cap-js-community/odata-v2-adapter": "^1.15.2",
+    "@cap-js/hana": "^2.1.2",
+    "@sap/cds": "^9.2.0",
+    "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
     "express": "^4"
   },
-  "devDependencies": {
-    "@cap-js/sqlite": "^1"
-  },
   "scripts": {
-    "start": "cds-serve"
+    "start": "cds-serve",
+    "watch-bookstore": "cds watch --open bookstore/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-project1": "cds watch --open project1/webapp/index.html?sap-ui-xx-viewCache=false"
   },
-  "main": "index.js",
-  "author": ""
+  "cds": {
+    "requires": {
+      "db": "hana"
+    }
+  },
+  "sapux": [
+    "app/bookstore",
+    "app/bookstore",
+    "app/bookstore",
+    "app/bookstore",
+    "app/bookstore",
+    "app/project1"
+  ]
 }

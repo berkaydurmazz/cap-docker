@@ -5,6 +5,7 @@ applications:
       image: berkaydurmaz/docker:20250807-125210-e9a990f
      services:
       - docker-db
+     no-route: true
    - name: docker-db-deployer
      type: hdb
      path: gen/db
