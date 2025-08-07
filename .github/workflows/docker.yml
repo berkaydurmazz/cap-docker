@@ -32,7 +32,7 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Generate image tag
-        uses: |
+        run: |
             echo "IMAGE_TAG=$(date +%Y%m%d-%H%M%S)-${GITHUB_SHA::7}" >> $GITHUB_ENV
           
       - name: Build and Push Docker image
