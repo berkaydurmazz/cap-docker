@@ -1,0 +1,17 @@
+applications:
+   - name: docker
+     instances: 1
+     docker:
+      image: berkaydurmaz/docker:20250807-125210-e9a990f
+     services:
+      - docker-db
+   - name: docker-db-deployer
+     type: hdb
+     path: gen/db
+     memory: 256M
+     no-route: true
+     health-check-type: none
+     parameters:
+      buildpack: nodejs_buildpack
+     services:
+      - docker-db
